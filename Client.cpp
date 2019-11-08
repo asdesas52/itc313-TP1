@@ -1,10 +1,10 @@
 #include "Client.h"
 
-void Client::setNom(std::string nom){
-	m_nom=nom;
+void Client::setName(std::string name){
+	m_name=name;
 }
-void Client::setPrenom(std::string prenom){
-	m_prenom=prenom;
+void Client::setFirstname(std::string firstname){
+	m_firstname=firstname;
 }
 void Client::setId(int id){
 	m_id = id;
@@ -13,11 +13,11 @@ void Client::setPastreservation(int number){
 	m_pastreservation=number;
 }
 
-std::string Client::getNom(){
-	return m_nom;
+std::string Client::getName(){
+	return m_name;
 }
-std::string Client::getPrenom(){
-	return m_prenom;
+std::string Client::getFirstname(){
+	return m_firstname;
 }
 int Client::getId(){
 	return m_id;
@@ -28,16 +28,16 @@ int Client::getPastreservation(){
 
 Client::Client() {
 		
-		setNom("undefine");
-		setPrenom("undefine");
+		setName("undefine");
+		setFirstname("undefine");
 		setId(0);
 		setPastreservation(0);
 }
 
-Client::Client(std::string nom , std::string prenom , int id , int pastreservation) {
+Client::Client(std::string name , std::string firstname , int id , int pastreservation) {
 		
-		setNom(nom);
-		setPrenom(prenom);
+		setName(name);
+		setFirstname(firstname);
 		setId(id);
 		setPastreservation(pastreservation);
 }

@@ -9,22 +9,22 @@
 class Client{
 
 	private:
-		std::string m_nom;
-		std::string m_prenom;
+		std::string m_name;
+		std::string m_firstname;
 		int m_id;
 		int m_pastreservation;
 
 	public:
-		void setNom(std::string nom);
-		void setPrenom(std::string prenom);
+		void setName(std::string nom);
+		void setFirstname(std::string firstname);
 		void setId(int id); //verification multiple ID
 		void setPastreservation(int number);
-		std::string getNom();
-		std::string getPrenom();
+		std::string getName();
+		std::string getFirstname();
 		int getId();
 		int getPastreservation();
 		Client();
-		Client(std::string nom, std::string prenom,int id,int m_pastreservation);
+		Client(std::string name, std::string firstname,int id,int pastreservation);
 
 
 };
