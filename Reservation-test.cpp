@@ -17,7 +17,7 @@ int main(){
 	r.setIdCh(1001);
 	cout << "Chambre n° : " << r.getIdCh() << endl;
 	
-	r.setRDate(1,2,19,4,5,19);
+	r.setRDate(-1,2,19,1,6,19);
 
 	r.getRDate();
 	

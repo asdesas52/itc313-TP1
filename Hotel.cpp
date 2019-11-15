@@ -1,4 +1,5 @@
 #include "Hotel.h"
+#include "Chambre.h"
 
 void Hotel::setName(std::string name){
 	m_name=name;
@@ -34,7 +35,7 @@ Hotel::Hotel() {
 		setListofchamber(0);
 }
 
-Hotel::Hotel(std::string name , std::string Town , int id , int listofchamber) {
+Hotel::Hotel(std::string name , std::string Town) {
 		
 		setName(name);
 		setTown(Town);

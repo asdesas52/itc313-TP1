@@ -96,20 +96,19 @@ void Reservation::setRDate(int dayS, int monthS, int yearS, int dayE, int monthE
 			cerr << "Error on year ! " << endl; 
 			}
 			
-	if (monthS==monthE && yearE==yearS){
+	if (dayS>=1 && dayE>=1 && dayS<=31 && dayE<=31 && monthS==monthE && yearE==yearS && dayS<dayE){
 		m_night=dayE-dayS;
 	}
 	
-	else if (yearE==yearS){
+	else if (monthS>=1 && monthE>=1 && monthS<=12 && monthE<=12 && yearE==yearS && monthS<monthE ){
 		m_night=31-dayS+(monthE-monthS+1)*31+dayE;
 	}
 	
-	else if (yearE=!yearS){
+	else if (yearS>=0 && yearE>=0 && (yearE=!yearS) && yearS<yearE){
 		m_night=31-dayS+(12-monthS+monthE+1)*31+dayE;
 	}
 			
-			
-			
+		
 			
 			
 			
@@ -191,7 +190,29 @@ int Reservation::night(){
 
 
 
-
+Reservation::Reservation(){
+	
+		
+		  m_id_r=0;
+		  m_id_h=0;
+		  m_id_ch=0;
+		  m_id_c=0;
+		
+		  m_price_r=0;
+		
+		  m_day_s=0;
+		  m_month_s=0;
+		  m_year_s=0;
+		
+		  m_day_e=0;
+		  m_month_e=0;
+		  m_year_e=0;
+		
+		  m_night=0;
+		
+	
+	
+}
 
 
 

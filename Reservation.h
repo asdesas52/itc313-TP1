@@ -29,7 +29,7 @@ class Reservation {
 		int m_month_e;
 		int m_year_e;
 		
-		int m_night=0;
+		int m_night;
 		
 		
 	public :
@@ -63,9 +63,9 @@ class Reservation {
 		
 		int night();
 		
-		void setRDate(int dayS, int dayE, int monthS, int monthE, int yearS, int yearE);
+		void setRDate(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE);
 		void getRDate();
-		
+		Reservation();
 };
 
 #endif
