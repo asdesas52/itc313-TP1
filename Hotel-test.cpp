@@ -2,9 +2,13 @@
 
 int main(){
 
-Hotel hotel("Ibis","Paris",320,30);
+Hotel hotel("Ibis","Paris");
+hotel.setListofchamber("single",100,3);
+hotel.setListofchamber("double",125,5);
+hotel.setListofchamber("suite",210,3);
+hotel.setListofchamber("single",100);
 
-std::cout << hotel.getName() << " " << hotel.getTown() <<" "<< hotel.getId()<< " " << hotel.getListofchamber()<<std::endl;
+hotel.showHotel();
 
 	return 0;
 }

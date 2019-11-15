@@ -29,7 +29,11 @@ class Chambre {
 		
 		void setPrice(float price);
 		float  getPrice();
-		
+		void showChamber();
+
+		Chambre();
+		Chambre(string type , float price);
+
 	
 	
 	
