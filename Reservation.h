@@ -21,11 +21,11 @@ class Reservation {
 		
 		float m_price_r;
 		
-		int m_day_s;
+		int m_day_s; //start
 		int m_month_s;
 		int m_year_s;
 		
-		int m_day_e;
+		int m_day_e; //end
 		int m_month_e;
 		int m_year_e;
 		

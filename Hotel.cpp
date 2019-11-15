@@ -1,6 +1,7 @@
 #include "Hotel.h"
 #include "Chambre.h"
 
+
 void Hotel::setName(std::string name){
 	m_name=name;
 }
@@ -10,8 +11,11 @@ void Hotel::setTown(std::string Town){
 void Hotel::setId(int id){
 	m_id = id;
 }
-void Hotel::setListofchamber(int number){
-	m_listofchamber=number;
+void Hotel::setListofchamber(std::string type , float price ,int number){
+	for (int i=0 ; i<number;i++){
+		m_listofchamber.push_back(Chambre(type , price));
+		m_listofchamber[(m_listofchamber.size()-1)].setId((m_listofchamber.size()));//offset de 1 car 0 reservé pour la non initialisation
+	}
 }
 
 std::string Hotel::getName(){
@@ -23,22 +27,41 @@ std::string Hotel::getTown(){
 int Hotel::getId(){
 	return m_id;
 }
-int Hotel::getListofchamber(){
+std::vector<Chambre> Hotel::getListofchamber(){
 	return m_listofchamber;
 }
 
+void Hotel::showHotel(){
+	std::cout << getName() << " " << getTown() <<" "<< getId()<<std::endl;
+	for (unsigned int i =0 ; i < m_listofchamber.size();i++){
+		m_listofchamber[i].showChamber();
+	}
+
+
+
+}
+
 Hotel::Hotel() {
-		
-		setName("undefine");
-		setTown("undefine");
+		setName("name");
+		setTown("Town");
 		setId(0);
-		setListofchamber(0);
+		m_cursor=0;
+
 }
 
 Hotel::Hotel(std::string name , std::string Town) {
+<<<<<<< HEAD
 		
 		setName(name);
 		setTown(Town);
 		setId(id);
 		setListofchamber(listofchamber);
 }
+=======
+		setName(name);
+		setTown(Town);
+		setId(0);
+		m_cursor=0;
+
+}
+>>>>>>> e452f6da6737e6e4f7c8286df3696e2c6f26b01b

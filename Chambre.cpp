@@ -47,3 +47,20 @@ float Chambre::getPrice(){
 	 return m_price;
 	
 }
+
+void Chambre::showChamber(){
+	cout << getId() <<"   "<< getPrice() << "   " << getType() << endl;
+}
+
+Chambre::Chambre(){
+	setType("type");
+	setPrice(0);
+	m_id=0;
+
+}
+Chambre::Chambre(std::string type , float price){
+	m_type=type;
+	m_price=price;
+	m_id=0;
+
+}
