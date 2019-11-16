@@ -31,8 +31,7 @@ class Chambre {
 		float  getPrice();
 		void showChamber();
 
-		Chambre();
-		Chambre(string type , float price);
+		Chambre(string type = "undefine" , float price = 0);
 
 	
 	

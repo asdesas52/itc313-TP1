@@ -113,7 +113,7 @@ Date::Date(int day , int month , int year)
 		cerr<<"error on the date"<< endl;
 	} 
 }
-bool Date::getValidedate()
+bool Date::getValidedate() 
 {	
 	return m_validedate;
 }
