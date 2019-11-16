@@ -3,19 +3,15 @@
 int main()
 {
 
-	Date d1;
-	Date d2(1, 1, 2012);
-	Date d3(2, 1, 2012);
+	Date d2(1, 2, 2019);
+	Date d3(3, 2, 2019);
 	Date d4(1, 11, 2019);
 	Date d5(1, 11, 2019);
 
-	d1.getDate();
-	d2.getDate();
-	d3.getDate();
-	d4.getDate();
-	d5.getDate();
+	d2.showDate();
+	d3.showDate();
+	d4.showDate();
+	d5.showDate();
 
-	std::cout << d2.getNumberofdayfrom(d3) << "  main" << std::endl;
-	std::cout << d4.getNumberofdayfrom(d5) << "  main" << std::endl;
 	return 0;
 }

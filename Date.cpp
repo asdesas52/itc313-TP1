@@ -119,13 +119,6 @@ void Date::showDate()
 	}
 }
 
-Date::Date(int day, int month, int year)
-{
-	if (setDate(day, month, year) == -1)
-	{
-		//cerr << "error on the date" << endl;
-	}
-}
 bool Date::getValidedate()
 {
 	return m_validedate;
@@ -160,4 +153,21 @@ int Date::getNumberofdayfrom(Date target)
 	{
 		return -1;
 	}
+}
+
+Date::Date(int day, int month, int year)
+{
+
+	if (setDate(day, month, year) == -1)
+	{
+		cerr << "error on the date" << endl;
+	}
+}
+
+Date::Date()
+{
+	m_day = 0;
+	m_month = 0;
+	m_year = 0;
+	m_validedate = false;
 }

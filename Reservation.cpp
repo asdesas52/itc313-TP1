@@ -42,9 +42,13 @@ int Reservation::getIdC()
 
 void Reservation::showRDate()
 {
+	if (m_validereservation == false)
+	{
+		cerr << "INVALIDE RESERVATION" << endl;
+	}
 	m_s.showDate();
 	m_e.showDate();
-	cout << "Nombre de nuits : " << m_night << endl;
+	cerr << "Nombre de nuits : " << m_night << endl;
 }
 
 void Reservation::setRPrice(float price, float discount)

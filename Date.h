@@ -21,7 +21,8 @@ public:
 	void showDate();
 	bool getValidedate();
 	int getNumberofdayfrom(Date target);
-	Date(int day = 0, int month = 0, int year = 0);
+	Date();
+	Date(int day, int month, int year);
 };
 int getmonthlength(int month, int year);
 

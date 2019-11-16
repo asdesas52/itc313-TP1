@@ -3,7 +3,7 @@
 int main()
 {
 
-	Reservation r(1, 2, 2019, 3, 2, 2019);
+	Reservation r(2, 2, 2019, 3, 2, 2019);
 
 	r.setIdH(91);
 	cout << "Id Hotel : " << r.getIdH() << endl;
@@ -16,8 +16,6 @@ int main()
 
 	r.setIdCh(1001);
 	cout << "Chambre n° : " << r.getIdCh() << endl;
-
-	r.setRDate(1, 2, 2019, 4, 2, 2019);
 
 	r.showRDate();
 
