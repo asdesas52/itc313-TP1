@@ -8,8 +8,7 @@
 int main(){
 	
 	Hotel("Le Bellagio","Los Angeles");
-	Chambre c;
-	c.setId(1000);
+	
 	
 	
 	return 0;
