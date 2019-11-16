@@ -5,7 +5,7 @@ int main()
 
 	Client cli("jhon", "gerald");
 
-	std::cout << cli.getName() << " " << cli.getFirstname() << " " << cli.getId() << " " << cli.getPastreservation() << std::endl;
+	cli.showClient();
 
 	return 0;
 }

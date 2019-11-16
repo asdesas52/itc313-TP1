@@ -17,21 +17,26 @@ void Client::setPastreservation(int number)
 	m_pastreservation = number;
 }
 
-std::string Client::getName()
+std::string Client::getName() const
 {
 	return m_name;
 }
-std::string Client::getFirstname()
+std::string Client::getFirstname() const
 {
 	return m_firstname;
 }
-int Client::getId()
+int Client::getId() const
 {
 	return m_id;
 }
-int Client::getPastreservation()
+int Client::getPastreservation() const
 {
 	return m_pastreservation;
+}
+
+void Client::showClient() const
+{
+	std::cout << " nom : " << m_firstname << "	 prenom : " << m_name << "	 id : " << m_id << "	 reservation passée : " << m_pastreservation << std::endl;
 }
 
 Client::Client(std::string name, std::string firstname)
