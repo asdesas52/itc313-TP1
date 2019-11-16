@@ -137,11 +137,11 @@ int Date::getNumberofdayfrom(Date target){
 			day++;
 			
 		}
-		return numberofday;
+		return (numberofday-1);
 
 	}
 	else{
-		cerr<<"invalide comparison"<< endl;
+		cerr<<"invalide comparaison"<< endl;
 		return -1;
 	}
 }
