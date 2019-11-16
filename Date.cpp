@@ -1,147 +1,164 @@
 #include "Date.h"
 
-int getmonthlength(int month ,int year){
-	int leapyear=0;
-	if (year%4==0){
-		leapyear=1;
+int getmonthlength(int month, int year)
+{
+	int leapyear = 0;
+	if (year % 4 == 0)
+	{
+		leapyear = 1;
 	}
-	if (month >=1 && month <= 12 && year > -1) 
+	if (month >= 1 && month <= 12 && year > -1)
 		switch (month) //fonction month length
-			{
-			case 1:return 31;	
-			case 2:return (28+leapyear);
-			case 3:return 31;	
-			case 4:return 30;	
-			case 5:return 31;	
-			case 6:return 30;	
-			case 7:return 31;	
-			case 8:return 31;	
-			case 9:return 30;	
-			case 10:return 31;	
-			case 11:return 30;
-			case 12:return 31;	
-			}
-	else 
-	 	return -1;
+		{
+		case 1:
+			return 31;
+		case 2:
+			return (28 + leapyear);
+		case 3:
+			return 31;
+		case 4:
+			return 30;
+		case 5:
+			return 31;
+		case 6:
+			return 30;
+		case 7:
+			return 31;
+		case 8:
+			return 31;
+		case 9:
+			return 30;
+		case 10:
+			return 31;
+		case 11:
+			return 30;
+		case 12:
+			return 31;
+		}
+	else
+		return -1;
 
 	return 0;
-	
-
-
 }
 
-int Date::setDate( int day, int month, int year){
+int Date::setDate(int day, int month, int year)
+{
 
-	int dayinthemonth=getmonthlength(month , year);
+	int dayinthemonth = getmonthlength(month, year);
 
-	if ((dayinthemonth != -1)){
+	if ((dayinthemonth != -1))
+	{
 		m_month = month;
-		}
-	else {
-		m_validedate=false;
+	}
+	else
+	{
+		m_validedate = false;
 		m_month = month;
-		m_day=day;
-		m_year=year;
+		m_day = day;
+		m_year = year;
 		return -1;
-		}
+	}
 
-	if ((day >=1) && (day <= dayinthemonth) ) {	
-		m_day=day;
-		}
-	else {
+	if ((day >= 1) && (day <= dayinthemonth))
+	{
+		m_day = day;
+	}
+	else
+	{
 		m_validedate = false;
 		m_month = month;
-		m_day=day;
-		m_year=year;
-	 	return -1;
-	 }
-		
-	if (year >= 0) {
-		m_year=year;
-		}
-	else {
+		m_day = day;
+		m_year = year;
+		return -1;
+	}
+
+	if (year >= 0)
+	{
+		m_year = year;
+	}
+	else
+	{
 		m_month = month;
-		m_day=day;
-		m_year=year;
+		m_day = day;
+		m_year = year;
 		m_validedate = false;
-	 	return -1;
+		return -1;
 	}
 	m_validedate = true;
 	return 0;
 }
 
-
-int Date::day(){
+int Date::day()
+{
 
 	return m_day;
-
 }
 
-int Date::month(){
+int Date::month()
+{
 
 	return m_month;
-
 }
 
-int Date::year(){
+int Date::year()
+{
 
 	return m_year;
-
 }
 
-void Date::getDate(){
-	
-	if (m_validedate ){
-	cout << "Date : " << m_day << " / " << m_month << " / " << m_year << endl;
-	}else {
-	cout << "	INVALIDE DATE	Date : " << m_day << " / " << m_month << " / " << m_year << endl;
+void Date::getDate()
+{
+
+	if (m_validedate)
+	{
+		cout << "Date : " << m_day << " / " << m_month << " / " << m_year << endl;
 	}
-
-	
-}
-		
-Date::Date(){
-	m_day=0;
-	m_month=0;
-	m_year=0;
-	m_validedate=false;
+	else
+	{
+		cout << "	INVALIDE DATE	Date : " << m_day << " / " << m_month << " / " << m_year << endl;
+	}
 }
 
-Date::Date(int day , int month , int year)
-{	
-	if ( setDate(day , month, year) == -1){
-		cerr<<"error on the date"<< endl;
-	} 
+Date::Date(int day, int month, int year)
+{
+	if (setDate(day, month, year) == -1)
+	{
+		cerr << "error on the date" << endl;
+	}
 }
-bool Date::getValidedate() 
-{	
+bool Date::getValidedate()
+{
 	return m_validedate;
 }
-int Date::getNumberofdayfrom(Date target){
+int Date::getNumberofdayfrom(Date target)
+{
 	int day = m_day;
 	int month = m_month;
 	int year = m_year;
-	if(m_validedate && target.m_validedate && ((m_year<target.m_year) || (m_year== target.m_year && m_month < target.m_month) ||( m_year== target.m_year && m_month == target.m_month && m_day <= target.m_day))){
-		int numberofday=0;
+	if (m_validedate && target.m_validedate && ((m_year < target.m_year) || (m_year == target.m_year && m_month < target.m_month) || (m_year == target.m_year && m_month == target.m_month && m_day <= target.m_day)))
+	{
+		int numberofday = 0;
 
-		for ( numberofday=1 ; (month != target.m_month) || (year != target.m_year)  || (day != target.m_day) ; numberofday++){ //on va avancer de joue en jour
-			if(day==(getmonthlength(month,year))){
-				day=1;
+		for (numberofday = 1; (month != target.m_month) || (year != target.m_year) || (day != target.m_day); numberofday++)
+		{ //on va avancer de joue en jour
+			if (day == (getmonthlength(month, year)))
+			{
+				day = 1;
 				month++;
 			}
 
-			if(month==12+1){
-				month=1;
+			if (month == 12 + 1)
+			{
+				month = 1;
 				year++;
 			}
 			day++;
-			
 		}
 		return numberofday;
-
 	}
-	else{
-		cerr<<"invalide comparison"<< endl;
+	else
+	{
+		cerr << "invalide comparison" << endl;
 		return -1;
 	}
 }

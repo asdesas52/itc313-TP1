@@ -1,10 +1,11 @@
 #include "Client.h"
 
-int main(){
+int main()
+{
 
-Client cli("jhon","gerald",320,0);
+	Client cli("jhon", "gerald");
 
-std::cout << cli.getName() << " " << cli.getFirstname() <<" "<< cli.getId()<< " " << cli.getPastreservation()<<std::endl;
+	std::cout << cli.getName() << " " << cli.getFirstname() << " " << cli.getId() << " " << cli.getPastreservation() << std::endl;
 
 	return 0;
 }
