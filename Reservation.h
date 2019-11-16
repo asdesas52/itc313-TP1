@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Date.h"
 
 
 using namespace std;
@@ -21,15 +22,9 @@ class Reservation {
 		
 		float m_price_r;
 		
-		int m_day_s; //start
-		int m_month_s;
-		int m_year_s;
 		
-		int m_day_e; //end
-		int m_month_e;
-		int m_year_e;
 		
-		int m_night;
+		Date s, e;
 		
 		
 	public :
@@ -52,20 +47,14 @@ class Reservation {
 		float  getRPrice();
 		
 		
-		int day_s();
-		int month_s();
-		int year_s();
+	
 		
 		
-		int day_e();
-		int month_e();
-		int year_e();
 		
-		int night();
-		
-		void setRDate(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE);
+		void setRdate(Date s,Date e);
 		void getRDate();
 		Reservation();
+		Reservation(int dayS, int monthS, int yearS, int dayE, int monthE,  int yearE);
 };
 
 #endif
