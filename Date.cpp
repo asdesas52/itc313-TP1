@@ -106,7 +106,7 @@ int Date::year()
 	return m_year;
 }
 
-void Date::getDate()
+void Date::showDate()
 {
 
 	if (m_validedate)
@@ -123,7 +123,7 @@ Date::Date(int day, int month, int year)
 {
 	if (setDate(day, month, year) == -1)
 	{
-		cerr << "error on the date" << endl;
+		//cerr << "error on the date" << endl;
 	}
 }
 bool Date::getValidedate()
@@ -140,7 +140,7 @@ int Date::getNumberofdayfrom(Date target)
 		int numberofday = 0;
 
 		for (numberofday = 1; (month != target.m_month) || (year != target.m_year) || (day != target.m_day); numberofday++)
-		{ //on va avancer de joue en jour
+		{ //on va avancer de jour en jour
 			if (day == (getmonthlength(month, year)))
 			{
 				day = 1;
@@ -158,7 +158,6 @@ int Date::getNumberofdayfrom(Date target)
 	}
 	else
 	{
-		cerr << "invalide comparison" << endl;
 		return -1;
 	}
 }

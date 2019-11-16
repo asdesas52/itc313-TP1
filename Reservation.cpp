@@ -1,141 +1,120 @@
 #include "Reservation.h"
 
-
-
-void Reservation::setIdR(int idR){
-	
-	m_id_r=idR;
-	
-	
-	
+void Reservation::setIdR(int idR)
+{
+	m_id_r = idR;
 }
 
-void Reservation::setIdC(int idC){
-	
-	
-	m_id_c=idC;
-	
-	
+void Reservation::setIdC(int idC)
+{
+	m_id_c = idC;
 }
 
-void Reservation::setIdCh(int idCh){
-	
-	
-	m_id_ch=idCh;
-	
-	
+void Reservation::setIdCh(int idCh)
+{
+	m_id_ch = idCh;
 }
 
-void Reservation::setIdH(int idH){
-	
-	
-	m_id_h=idH;
-	
-	
+void Reservation::setIdH(int idH)
+{
+	m_id_h = idH;
 }
 
-
-int Reservation::getIdR(){
-	
-	
+int Reservation::getIdR()
+{
 	return m_id_r;
-		
 }
 
-
-int Reservation::getIdH(){
-	
-	
+int Reservation::getIdH()
+{
 	return m_id_h;
-		
 }
 
-
-
-int Reservation::getIdCh(){
-	
-	
+int Reservation::getIdCh()
+{
 	return m_id_ch;
-		
 }
 
-
-int Reservation::getIdC(){
-	
-	
+int Reservation::getIdC()
+{
 	return m_id_c;
-		
 }
 
-
-
-
-
-
-void Reservation::getRDate(){
-	
-	s.getDate();
-	e.getDate();
-	cout << "Nombre de nuits : " << s.getNumberofdayfrom(e) << endl;
-	
+void Reservation::showRDate()
+{
+	m_s.showDate();
+	m_e.showDate();
+	cout << "Nombre de nuits : " << m_night << endl;
 }
 
-void Reservation::setRPrice(float price, float discount){
-	
-	if (s.getNumberofdayfrom(e) != -1){
-	
-	m_price_r=s.getNumberofdayfrom(e)*price*discount;
-	
-	}
-	
-	
+void Reservation::setRPrice(float price, float discount)
+{
+
+	m_price_r = m_night * price * discount;
 }
 
+float Reservation::getRPrice()
+{
 
-
-float Reservation::getRPrice(){
-	
-	
 	return m_price_r;
-	
 }
 
+Reservation::Reservation(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE)
+{
 
+	m_id_r = 0;
+	m_id_h = 0;
+	m_id_ch = 0;
+	m_id_c = 0;
+	m_price_r = 0;
+	m_validereservation = true;
 
-Reservation::Reservation(){
-	
-		
-		  m_id_r=0;
-		  m_id_h=0;
-		  m_id_ch=0;
-		  m_id_c=0;
-		
-		  m_price_r=0;
-		
-		  s.date();
-		  e.date();
-		
+	if (m_s.setDate(dayS, monthS, yearS) == -1)
+	{
+		m_validereservation = false;
+		cerr << "invalide reservation date" << endl;
+	}
+	if (m_e.setDate(dayE, monthE, yearE) == -1)
+	{
+		m_validereservation = false;
+		cerr << "invalide reservation date" << endl;
+	}
 
-		
-	
-	
+	if (m_s.getNumberofdayfrom(m_e) >= 2)
+	{
+		m_night = m_s.getNumberofdayfrom(m_e) - 1;
+	}
+	else
+	{
+		m_validereservation = false;
+		m_night = 0;
+		cerr << "invalide reservation periode" << endl;
+	}
 }
 
-Reservation::Reservation(int dayS, int monthS, int yearS, int dayE, int monthE,  int yearE){
-	
-	s.setDate(dayS,monthS,yearS);
-	e.setDate(dayE,monthE,yearE);
-	
-	
+void Reservation::setRDate(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE)
+{
+	m_validereservation = true;
 
+	if (m_s.setDate(dayS, monthS, yearS) == -1)
+	{
+		m_validereservation = false;
+		cerr << "invalide reservation date" << endl;
+	}
+	if (m_e.setDate(dayE, monthE, yearE) == -1)
+	{
+		m_validereservation = false;
+		cerr << "invalide reservation date" << endl;
+	}
 
-
-
-
-
-
-
+	if (m_s.getNumberofdayfrom(m_e) >= 2)
+	{
+		m_night = m_s.getNumberofdayfrom(m_e) - 1;
+	}
+	else
+	{
+		m_validereservation = false;
+		m_night = 0;
+		cerr << "invalide reservation periode" << endl;
+	}
 }
-
-
-

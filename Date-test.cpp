@@ -5,9 +5,9 @@ int main()
 
 	Date d1;
 	Date d2(1, 1, 2012);
-	Date d3(31, 1, 2012);
+	Date d3(2, 1, 2012);
 	Date d4(1, 11, 2019);
-	Date d5(30, 11, 2019);
+	Date d5(1, 11, 2019);
 
 	d1.getDate();
 	d2.getDate();
