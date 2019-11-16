@@ -12,17 +12,22 @@ class Date {
 		int m_day;
 		int m_month;
 		int m_year;
+		bool m_validedate;
 	
 	
 	public :
 	
-		void setDate( int day, int month, int year);
+		int setDate( int day, int month, int year);
 		int day();
 		int month();
 		int year();
 		void getDate();
+		bool getValidedate();
+		int getNumberofdayfrom(Date target);
+		Date(int day , int month , int year);
+		Date();
 	
 };
-
+int getmonthlength(int month ,int year);
 
 #endif
