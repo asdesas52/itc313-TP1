@@ -94,6 +94,14 @@ Reservation manualReservation()
 	return reservation;
 }
 
+std::string askchamber()
+{
+	std::string chambertype = "";
+	std::cout << "Veuiller entre un type de chambre à reserver" << std::endl;
+	std::cin >> chambertype;
+	return chambertype;
+}
+
 int main()
 {
 	std::array<Client, 10> arraycli = creationclient();
@@ -107,9 +115,9 @@ int main()
 	test.setListofchamber("suite", 210, 3);
 	test.showHotel();
 
-	Reservation reservation = manualReservation();
-	reservation.showRDate();
-	reservation.setIdH(1);
+	vectreservation.push_back(manualReservation());
+	vectreservation[0].showRDate();
+	vectreservation[0].setIdH(1);
 
 	return 0;
 }
