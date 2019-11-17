@@ -109,6 +109,7 @@ int main()
 
 	Reservation reservation = manualReservation();
 	reservation.showRDate();
+	reservation.setIdH(1);
 
 	return 0;
 }
