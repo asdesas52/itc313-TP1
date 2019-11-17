@@ -132,9 +132,11 @@ int Date::getNumberofdayfrom(Date target)
 	{
 		int numberofday = 0;
 
-		for (numberofday = 1; (month != target.m_month) || (year != target.m_year) || (day != target.m_day); numberofday++)
+		for (numberofday = 0; ((day != target.m_day) || (month != target.m_month) || (year != target.m_year)); numberofday++)
 		{ //on va avancer de jour en jour
-			if (day == (getmonthlength(month, year)))
+
+			day++;
+			if (day == (getmonthlength(month, year) + 1))
 			{
 				day = 1;
 				month++;
@@ -145,9 +147,8 @@ int Date::getNumberofdayfrom(Date target)
 				month = 1;
 				year++;
 			}
-			day++;
 		}
-		return numberofday;
+		return numberofday + 1;
 	}
 	else
 	{

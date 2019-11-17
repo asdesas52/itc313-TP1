@@ -40,6 +40,8 @@ public:
 	void setRDate(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE);
 	void showRDate();
 
+	bool getValidation();
+
 	Reservation(int dayS = 0, int monthS = 0, int yearS = 0, int dayE = 0, int monthE = 0, int yearE = 0);
 };
 

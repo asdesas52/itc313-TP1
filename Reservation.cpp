@@ -63,6 +63,11 @@ float Reservation::getRPrice()
 	return m_price_r;
 }
 
+bool Reservation::getValidation()
+{
+	return m_validereservation;
+}
+
 Reservation::Reservation(int dayS, int monthS, int yearS, int dayE, int monthE, int yearE)
 {
 
@@ -76,12 +81,12 @@ Reservation::Reservation(int dayS, int monthS, int yearS, int dayE, int monthE, 
 	if (m_s.setDate(dayS, monthS, yearS) == -1)
 	{
 		m_validereservation = false;
-		cerr << "invalide reservation date" << endl;
+		//cerr << "invalide reservation date" << endl;
 	}
 	if (m_e.setDate(dayE, monthE, yearE) == -1)
 	{
 		m_validereservation = false;
-		cerr << "invalide reservation date" << endl;
+		//cerr << "invalide reservation date" << endl;
 	}
 
 	if (m_s.getNumberofdayfrom(m_e) >= 2)
@@ -92,7 +97,7 @@ Reservation::Reservation(int dayS, int monthS, int yearS, int dayE, int monthE, 
 	{
 		m_validereservation = false;
 		m_night = 0;
-		cerr << "invalide reservation periode" << endl;
+		//cerr << "invalide reservation periode" << endl;
 	}
 }
 

@@ -3,7 +3,7 @@
 int main()
 {
 
-	Reservation r(2, 2, 2019, 3, 2, 2019);
+	Reservation r(1, 2, 2019, 1, 5, 2019);
 
 	r.setIdH(91);
 	cout << "Id Hotel : " << r.getIdH() << endl;
